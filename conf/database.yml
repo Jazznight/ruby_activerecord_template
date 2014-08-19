@@ -1,0 +1,21 @@
+postgresql:
+    adapter: postgresql
+    host: localhost
+    database: mcw
+    username: etl
+    password: etl
+    pool: 5
+    timeout: 5000
+
+mysql:
+    adapter: mysql2
+    host: localhost
+    database: operation
+    username: etl
+    password: etl
+    pool: 5
+    timeout: 5000
+
+sqlite:
+    adapter: sqlite3
+    database: /tmp/etl.sqlite3
