@@ -7,10 +7,11 @@ ActiveRecord::Base.logger = Logger.new("#{RUN_DIR}/log/debug.log")
 ActiveRecord::Base.configurations = YAML::load(IO.read("#{RUN_DIR}/conf/database.yml"))
 ActiveRecord::Base.establish_connection(:mysql)
 
-class Psgc < ActiveRecord::Base
-    self.table_name = "PSGC"
-end
-
+##  Example for the relationshiop:
+##     There are 4 different geo location which are Region, Province, city and barangay.
+##     All those are belongs to GeoType entity and have their own heraichy as below:
+##         Region -> Provinces -> Cities -> barangays -> PoIs -> Stores
+##
 
 class GeoType < ActiveRecord::Base
     self.table_name = "operation.geo_type"
